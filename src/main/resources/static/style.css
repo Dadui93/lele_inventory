@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 24px;
+  color: #222;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 12px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  vertical-align: top;
+}
+
+.nav {
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav a {
+  text-decoration: none;
+  padding: 6px 10px;
+  background: #f3f3f3;
+  border-radius: 6px;
+}
+
+.error {
+  padding: 12px;
+  border: 1px solid #d33;
+  background: #fee;
+  border-radius: 6px;
+  margin-top: 12px;
+  white-space: pre-wrap;
+}
+

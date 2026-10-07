@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>Products</title>
+  <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<div class="nav">
+  <a th:href="@{/}">主页</a>
+  <a th:href="@{/products/new}">新增商品</a>
+</div>
+
+<h2>商品列表</h2>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>商品编码</th>
+    <th>商品名称</th>
+    <th>品类</th>
+    <th>厂商</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="p : ${products}">
+    <td th:text="${p.id}">1</td>
+    <td th:text="${p.productId}">P001</td>
+    <td th:text="${p.productName}">iPhone</td>
+    <td th:text="${p.productCategory.productCategoryName}">电子</td>
+    <td th:text="${p.manufacturingName}">Apple</td>
+  </tr>
+  <tr th:if="${#lists.isEmpty(products)}">
+    <td colspan="5">暂无数据</td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
+

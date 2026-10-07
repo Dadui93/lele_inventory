@@ -1,0 +1,33 @@
+# Build
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.original
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+.DS_Store
+
+# Logs / local runtime
+*.log
+backend*.log
+frontend-dev.log
+
+# Local secrets / overrides
+.env
+.env.*
+!.env.example
+**/application-local.yml
+**/application-local.yaml
+
+# OS
+Thumbs.db

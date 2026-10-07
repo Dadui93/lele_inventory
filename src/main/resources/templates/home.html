@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>Lele Inventory</title>
+  <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<div class="nav">
+  <a th:href="@{/product-categories}">品类</a>
+  <a th:href="@{/products}">商品</a>
+  <a th:href="@{/buying-platforms}">购买平台</a>
+  <a th:href="@{/buyers}">客户</a>
+</div>
+
+<div class="nav">
+  <a th:href="@{/inbound-orders}">入库单</a>
+  <a th:href="@{/transition-shipments}">转运单</a>
+  <a th:href="@{/outbound-orders}">出库单</a>
+  <form th:action="@{/logout}" method="post" style="margin:0;">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+    <button type="submit" style="background:#ffe0e0; border:0; border-radius:6px; padding:6px 10px; cursor:pointer;">退出</button>
+  </form>
+</div>
+
+<h2>主页</h2>
+<p>从菜单开始手动录入数据，并在转运/出库页面选择满足状态的 `item` 进行流转。</p>
+</body>
+</html>
+

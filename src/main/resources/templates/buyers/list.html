@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>Buyers</title>
+  <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<div class="nav">
+  <a th:href="@{/}">主页</a>
+  <a th:href="@{/buyers/new}">新增客户</a>
+</div>
+
+<h2>客户列表</h2>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>客户编码</th>
+    <th>客户名称</th>
+    <th>购买平台</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="b : ${buyers}">
+    <td th:text="${b.id}">1</td>
+    <td th:text="${b.buyerId}">B001</td>
+    <td th:text="${b.buyerName}">Tom</td>
+    <td th:text="${b.buyingPlatform.buyPlatformName}">Amazon</td>
+  </tr>
+  <tr th:if="${#lists.isEmpty(buyers)}">
+    <td colspan="4">暂无数据</td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
+

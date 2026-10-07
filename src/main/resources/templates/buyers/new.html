@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>New Buyer</title>
+  <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<div class="nav">
+  <a th:href="@{/}">主页</a>
+  <a th:href="@{/buyers}">返回列表</a>
+</div>
+
+<h2>新增客户</h2>
+<form th:action="@{/buyers}" method="post">
+  <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+
+  <div>
+    <label>客户编码：</label>
+    <input type="text" name="buyerId" required/>
+  </div>
+  <div style="margin-top:10px;">
+    <label>客户名称：</label>
+    <input type="text" name="buyerName" required/>
+  </div>
+  <div style="margin-top:10px;">
+    <label>购买平台：</label>
+    <select name="buyingPlatformId" required>
+      <option th:each="p : ${platforms}" th:value="${p.id}" th:text="${p.buyPlatformName}">平台</option>
+    </select>
+  </div>
+
+  <div style="margin-top:12px;">
+    <button type="submit">保存</button>
+  </div>
+</form>
+</body>
+</html>
+

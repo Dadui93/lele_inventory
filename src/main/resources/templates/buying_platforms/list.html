@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>Buying Platforms</title>
+  <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+<div class="nav">
+  <a th:href="@{/}">主页</a>
+  <a th:href="@{/buying-platforms/new}">新增平台</a>
+</div>
+
+<h2>购买平台列表</h2>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>平台编码</th>
+    <th>平台名称</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="p : ${platforms}">
+    <td th:text="${p.id}">1</td>
+    <td th:text="${p.buyingPlatformId}">PLAT001</td>
+    <td th:text="${p.buyPlatformName}">Amazon</td>
+  </tr>
+  <tr th:if="${#lists.isEmpty(platforms)}">
+    <td colspan="3">暂无数据</td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
+
